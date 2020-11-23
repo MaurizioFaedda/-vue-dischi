@@ -11,14 +11,19 @@
     <body>
         <div id="root">
             <div class="container">
-                <div class="card">
+                <div v-for="disc in discs" class="card">
                     <div class="disc-box">
                         <div class="disc-content">
+                            <div class="poster-img">
+                                <img :src="disc.poster" alt="">
 
+                            </div>
+                            <h4>{{disc.title}}</h4>
+                            <h5>{{disc.author}} <span>({{disc.year}})</span></h5>
                         </div>
                     </div>
                 </div>
-            
+
 
 
             </div>

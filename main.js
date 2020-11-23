@@ -1,7 +1,7 @@
 var app = new Vue ({
     el: '#root',
     data: {
-        disc: []
+        discs: []
     },
     methods: {
 
@@ -12,8 +12,8 @@ var app = new Vue ({
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result) => {
 
-                this.disc = result.data.response;
-                console.log(this.disc);
+                this.discs = result.data.response;
+                console.log(this.discs);
 
             })
 
