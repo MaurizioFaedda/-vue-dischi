@@ -10,22 +10,34 @@
     </head>
     <body>
         <div id="root">
-            <div class="container">
-                <div v-for="disc in discs" class="card">
-                    <div class="disc-box">
-                        <div class="disc-content">
-                            <div class="poster-img">
-                                <img :src="disc.poster" alt="">
+            <div id="wrapper">
+                <div class="container-side-left">
 
+                    <select @change="selected" v-model="selected_genre" id="" class="">
+                        <option value="">Tutti i generi</option>
+                        <option :value="genre" v-for="genre in genres">{{genre}}</option>
+
+                    </select>
+                    <button @click="order_up" type="button" name="button">Ordino in modo crescente</button>
+                    <button @click="order_down" type="button" name="button">Ordino in modo decrescente</button>
+                </div>
+                <div class="container-discs">
+                    <div v-if="selected_genre == disc.genre || selected_genre == ''" v-for="disc in discs" class="card">
+                        <div class="disc-box">
+                            <div class="disc-content">
+                                <div class="poster-img">
+                                    <img :src="disc.poster" alt="">
+
+                                </div>
+                                <h4>{{disc.title}}</h4>
+                                <h5>{{disc.author}} <span>({{disc.year}})</span></h5>
                             </div>
-                            <h4>{{disc.title}}</h4>
-                            <h5>{{disc.author}} <span>({{disc.year}})</span></h5>
                         </div>
                     </div>
+
+
+
                 </div>
-
-
-
             </div>
 
         </div>

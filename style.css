@@ -8,11 +8,25 @@ body{
     background-color: rgba(0, 0, 0, 0.96);
 }
 
-.container{
-    width: 1200px;
+#wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.container-side-left{
+    width: 15%;
+    height: 100vh;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.container-discs{
+    width: 80%;
     height: 100%;
     border: 1px solid #fff;
-    margin: 50px auto;
+    margin: 0 auto;
     border-radius: 8px;
     display: flex;
     justify-content: center;

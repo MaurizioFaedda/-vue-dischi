@@ -1,9 +1,32 @@
 var app = new Vue ({
     el: '#root',
     data: {
-        discs: []
+        discs: [],
+        selected_genre: '',
+        genres:[]
+
     },
     methods: {
+        selected(){
+        },
+
+        order_up(){
+            this.discs.sort(function(a, b){
+                return a.year-b.year
+            })
+        },
+
+        order_down(){
+            this.discs.sort(function(a, b){
+                return b.year-a.year
+            })
+        }
+
+
+    },
+
+    computed: {
+
 
     },
 
@@ -13,9 +36,25 @@ var app = new Vue ({
             .then((result) => {
 
                 this.discs = result.data.response;
-                console.log(this.discs);
+
+                this.discs.forEach((item) => {
+                    if(!this.genres.includes(item.genre)) {
+                        this.genres.push(item.genre)
+                    }
+                })
+
 
             })
 
+
+
+
+
     }
+
+
+
+
+
+
 })
